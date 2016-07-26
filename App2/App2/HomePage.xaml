@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.HomePage"
+             xmlns:Converters="clr-namespace:App2.Convertes;assembly=App2"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms">
+  
+  <Grid BackgroundColor="{StaticResource BrandColor}">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+    <Label Text="TITOLO"></Label>
+    <ListView SeparatorVisibility="None"
+              Grid.Row="1" 
+              SelectedItem="{Binding SelectedPostItem, Mode=TwoWay}"
+              ItemsSource="{Binding Items}" 
+              ItemTemplate="{StaticResource ItemDataTemplate}" 
+              x:Name="MyListView">
+
+    </ListView>
+    <Button Grid.Row="2" Text="Naviga" Command="{Binding NavigateCommand}"/>
+  </Grid>
+</ContentPage>

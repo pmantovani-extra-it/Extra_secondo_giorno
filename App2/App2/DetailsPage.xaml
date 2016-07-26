@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:App2.Controls;assembly=App2"
+             x:Class="App2.DetailsPage" >
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <ListView ItemsSource="{Binding Items}" RowHeight="200" >
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell >
+            <StackLayout>
+              <Label Text="{Binding Name}"/>
+              <Label Text="{Binding Body}"/>
+              <Label Text="{Binding Email}"/>
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+   
+    <controls:Fragement Grid.Row="1"/>
+  </Grid>
+  
+</ContentPage>
